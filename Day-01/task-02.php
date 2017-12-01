@@ -12,7 +12,9 @@ $sum = 0;
 $numbers = str_split( $input );
 $numbers = array_chunk( $numbers, ceil( count( $numbers ) / 2 ) );
 
-while ( ( $a = array_shift( $numbers[ 0 ] ) ) && ( $b = array_shift( $numbers[ 1 ] ) ) ){
+while ( ( $a = array_shift( $numbers[ 0 ] ) ) && 
+        ( $b = array_shift( $numbers[ 1 ] ) ) )
+{
     $sum = ( $a == $b ) ? $sum + ( $a + $b ) : $sum;
 }
 
