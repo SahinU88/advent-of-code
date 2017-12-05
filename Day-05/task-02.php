@@ -24,7 +24,7 @@ class MazeStepper
         $this->steps++;
         
         $newPosition = $this->getNextInstruction();
-        $this->increaseCurrentStepInstruction();
+        $this->updateCurrentStepInstruction();
         $this->setNewPosition( $newPosition );
         
         $this->stepThroughMaze();
@@ -42,9 +42,9 @@ class MazeStepper
         return $this->maze[ $this->position ];
     }
     
-    private function increaseCurrentStepInstruction()
+    private function updateCurrentStepInstruction()
     {
-        $this->maze[ $this->position ]++;
+        $this->maze[ $this->position ] += ( $this->maze[ $this->position ] < 3 ) ? 1 : -1;
     }
     
     private function setNewPosition( $position )
@@ -56,4 +56,5 @@ class MazeStepper
 
 $maze = explode( PHP_EOL, file_get_contents( 'maze.txt' ) );
 
-echo ( new MazeStepper( $maze ) )->stepThroughMaze();
+// takes several minutes, so beware :)
+//echo ( new MazeStepper( $maze ) )->stepThroughMaze();
