@@ -6,17 +6,16 @@ require_once 'vendor/autoload.php';
 
 $passphrases = file_get_contents( 'passphrases.txt' );
 
-Collection::macro( 'hasDuplicates', function(){
+Collection::macro( 'duplicates', function(){
     return collect( array_count_values( $this->toArray() ) )
         ->filter( function( $value, $key ){
             return $value > 1;
-        })
-        ->isNotEmpty();
+        });
 });
 
 
 echo collect( explode( PHP_EOL, $passphrases ) )
         ->reject( function( $row ){
-            return collect( explode( ' ', $row ) )->hasDuplicates();
+            return collect( explode( ' ', $row ) )->duplicates()->isNotEmpty();
         })
         ->count();
