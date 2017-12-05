@@ -1,0 +1,12 @@
+{
+    "name": "flyingfalcon/adventofcode-day04",
+    "authors": [
+        {
+            "name": "SahinU88",
+            "email": "sahin@flyingfalcon.io"
+        }
+    ],
+    "require": {
+        "tightenco/collect": "^5.5"
+    }
+}
