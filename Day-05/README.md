@@ -1,6 +1,6 @@
 # Maze
 
-The solution itself is pretty straigt-forward. But I guess, bad timing to use a recursion ^^. Part Two takes several minutes, so I just did a couple of python-code ( my first :) ) which is done in couple of seconds.
+The solution itself is pretty straigt-forward. But I guess, bad timing to use a recursion ^^. Part Two takes several minutes, so I just did a couple lines of python-code ( my first :) ) which is done in couple of seconds.
 
 ## Task One
 
